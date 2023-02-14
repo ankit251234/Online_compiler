@@ -1,0 +1,102 @@
+<html>
+   <head>
+      <title>Angular JS Views</title>
+      <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+      <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js">
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" content-type="text/css" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>  
+
+   </head>
+   
+   <body>
+      <h2>Online Text Editor</h2>
+      <div ng-app = "mainApp">
+         
+         <p><a href = "#viewjavap">View Java</a></p>
+         <p><a href = "#viewcpp">View C++</a></p>
+         <p><a href = "#viewccp">View C</a></p>
+         <p><a href = "#viewpyp">View Python</a></p>
+         <div ng-view></div>
+         
+         
+        
+        <script type = "text/ng-template" id = "viewjavap.html">
+            <h2> View Java </h2>
+            {{message}}
+         </script>
+        
+        <script type = "text/ng-template" id = "viewcpp.html">
+            <h2> View C++ </h2>
+            {{message}}
+         </script>
+        
+        <script type = "text/ng-template" id = "viewccp.html">
+            <h2> View C </h2>
+            {{message}}
+         </script>
+        
+        <script type = "text/ng-template" id = "viewpyp.html">
+            <h2> View Python </h2>
+            {{message}}
+         </script>
+        
+      </div>
+      
+      <script>
+         var mainApp = angular.module("mainApp", ['ngRoute']);
+         mainApp.config(['$routeProvider', function($routeProvider) {
+            $routeProvider
+              
+            .when('/viewjavap', {
+               templateUrl: 'viewjavap.html',
+               controller: 'viewjavapController'
+            })
+            
+            .when('/viewcpp', {
+               templateUrl: 'viewcpp.html',
+               controller: 'viewcppController'
+            })
+            
+            .when('/viewccp', {
+               templateUrl: 'C://Users//lenovo//OneDrive - Vinca Cybertech Pvt. Ltd//Desktop//MCA//nodejsmca//project//viewcpp.html',
+               controller: 'viewccpController'
+            })
+            
+            .when('/viewpyp', {
+               templateUrl: 'viewpyp.html',
+               controller: 'viewpypController'
+            })
+            
+            
+            .otherwise({
+               redirectTo: '/welcometoonline'
+            });
+         }]);
+         
+         
+        
+         mainApp.controller('viewjavapController', function($scope) {
+            $scope.message = "This page will be used to display Java programming";
+         });
+        
+         mainApp.controller('viewcppController', function($scope) {
+            $scope.message = "This page will be used to display C++ programming";
+         });
+        
+         mainApp.controller('viewccpController', function($scope) {
+            $scope.message = "This page will be used to display C programming";
+         });
+        
+         mainApp.controller('viewpypController', function($scope) {
+            $scope.message = "This page will be used to display Python programming";
+         });
+         mainApp.controller('welcometoonline', function($scope) {
+            $scope.message = "Welcome to Online compiler";
+         });
+      </script>
+      
+   </body>
+</html>
