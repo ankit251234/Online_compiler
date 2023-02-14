@@ -1,0 +1,40 @@
+.lin{
+    text-decoration: none;
+    color:none;
+}
+
+textarea{
+    background-color:#E9F8F9;
+    color:yellow; 
+
+}
+#floatingTextarea2{
+    width:500px;
+    height:360px;
+    
+
+}
+#floatingTextarea1{
+    width:500px;
+    height:360px;
+    
+    
+    
+}
+
+#sub{
+    width:80px;
+    height:50px;
+    font-size: 18px;
+    margin-left:123px;
+    margin-top: 4px;
+    
+   
+}
+#res{
+    width:80px;
+    height:50px;
+    font-size: 18px;
+    color:white;
+    margin-top:1px;
+}
